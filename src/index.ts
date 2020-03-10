@@ -34,8 +34,10 @@ export class Timer {
     return this
   }
 
-  public removeAllListeners () {
+  public removeAllListeners (): this {
     this.listeners.clear()
+
+    return this
   }
 
   public cancel (): this {
