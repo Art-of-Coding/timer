@@ -40,6 +40,7 @@ export class Timer {
   public reset (ms?: number): this {
     ms = ms || this.ms
 
+    this.cancel()
     this.setTimeout(ms)
 
     return this
@@ -49,6 +50,7 @@ export class Timer {
     this.fired = false
     this.timeout = setTimeout(() => {
       this.fired = true
+      this.timeout = null
       this.listeners.forEach(listener => listener())
     }, ms)
   }
