@@ -34,6 +34,10 @@ export class Timer {
     return this
   }
 
+  public removeAllListeners () {
+    this.listeners.clear()
+  }
+
   public cancel (): this {
     if (!this.fired) {
       clearTimeout(this.timeout)
