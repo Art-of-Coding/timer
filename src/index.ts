@@ -50,10 +50,8 @@ export class Timer {
   }
 
   public reset (ms?: number): this {
-    ms = ms || this.ms
-
     this.cancel()
-    this.setTimeout(ms)
+    this.setTimeout(ms || this.ms)
 
     return this
   }
