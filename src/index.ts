@@ -14,13 +14,13 @@ export class Timer {
     this.ms = ms
 
     if (listeners.length) {
-      this.once(...listeners)
+      this.on(...listeners)
     }
 
     this.setTimeout(this.ms)
   }
 
-  public once (...listeners: (() => void)[]): this {
+  public on (...listeners: (() => void)[]): this {
     listeners.forEach(listener => {
       this.listeners.add(listener)
     })

@@ -18,7 +18,7 @@ import createTimer from '@art-of-coding/timer'
 const timer = createTimer(60 * 1000)
 
 // add a listener
-timer.once(() => {
+timer.on(() => {
   console.log('Timer fired')
 })
 
