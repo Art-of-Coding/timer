@@ -28,6 +28,17 @@ export class Timer {
     return this
   }
 
+  public once (...listeners: (() => void)[]): this {
+    listeners.forEach(listener => {
+      const wrappedListener = () => {
+        this.removeListener(wrappedListener)
+        listener()
+      }
+    })
+
+    return this
+  }
+
   public removeListener (listener: () => void): this {
     this.listeners.delete(listener)
 
