@@ -34,6 +34,8 @@ export class Timer {
         this.removeListener(wrappedListener)
         listener()
       }
+
+      this.listeners.add(wrappedListener)
     })
 
     return this
